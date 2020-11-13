@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <h1>TEST</h1>
+    <ul id="list"></ul>
+    <script>
+        const element = document.getElementById("list")
+        fetch('http://localhost:3000/prefs')
+        .then(value => value.json())
+        .then(value => {
+            value.forEach((value) => {
+                const liElement = document.createElement("li")
+                liElement.textContent = value.name
+                element.appendChild(liElement);
+            })
+        })
+    </script>
+</body>
+</html>
