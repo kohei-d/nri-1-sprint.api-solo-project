@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>都道府県一覧</title>
+    <script src="prefecture.js"></script>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <input type="radio" name="tab_item" id="tab_radio_A" class="tab_radio" checked>
+    <label for="tab_radio_A" class="tab_menu">GET</label>
+
+    <input type="radio" name="tab_item" id="tab_radio_B" class="tab_radio">
+    <label for="tab_radio_B" class="tab_menu">PUT</label>
+
+    <input type="radio" name="tab_item" id="tab_radio_C" class="tab_radio">
+    <label for="tab_radio_C" class="tab_menu">PATCH</label>
+
+    <input type="radio" name="tab_item" id="tab_radio_D" class="tab_radio">
+    <label for="tab_radio_D" class="tab_menu">DELETE</label>
+
+    <div id="tab_contains_A" class="tab_contains">
+        <p>都道府県の一覧を取得します。</p>
+        <input type="submit" value="GET" onclick="getPrefectures()">
+        <table border="1" id="tableA"></table>
+    </div>
+    <div id="tab_contains_B" class="tab_contains">
+        <p>都道府県を追加します。</p>
+        <input type="text" id="additionalPref">
+        <input type="submit" value="send" onclick="addPrefecture()">
+        <table border="1" id="tableB"></table>
+    </div>
+    <div id="tab_contains_C" class="tab_contains">
+        <p>都道府県の名前を更新します。</p>
+        <input type="number" id="updatePrefId">
+        <input type="text" id="updatePrefName">
+        <input type="submit" value="send" onclick="updatePrefecture()">
+        <table border="1" id="tableC"></table>
+    </div>
+    <div id="tab_contains_D" class="tab_contains">
+        <p>都道府県を削除します。</p>
+        <input type="number" id="deletePrefId">
+        <input type="submit" value="send" onclick="deletePrefecture()">
+        <P id="deleteMessage"></P>
+    </div>
+</body>
+</html>

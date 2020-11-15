@@ -1,0 +1,31 @@
+.tab_menu{
+    border-bottom :solid 3px #5bc0de;
+    background-color:#EEE;
+    margin: 0;
+    padding:0 1rem;
+    background-color:transport;
+}
+.tab_contains{
+    display:none;
+}
+.tab_radio:checked + .tab_menu{
+    background-color:white;
+}
+#tab_radio_A:checked ~ #tab_contains_A,
+#tab_radio_B:checked ~ #tab_contains_B,
+#tab_radio_C:checked ~ #tab_contains_C,
+#tab_radio_D:checked ~ #tab_contains_D
+{
+    display:block;
+
+    width:500px;
+    border: solid black 1px;
+    border-radius:3px;
+    padding:1rem;
+
+    margin-top:-1px;
+    background-color:white;
+}
+.tab_radio{
+    display:none;
+}

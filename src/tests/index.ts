@@ -28,7 +28,7 @@ describe("test about prefs", () => {
         await refRepository.save(pref_test);
     })
     it("should return all prefs", async () => {
-        const res = await request.get("/prefs").set("origin", null);
+        const res = await request.get("/prefs");
         const result = _.map(res.body, (value) => {
             return { name: value.name };
         })
@@ -37,18 +37,18 @@ describe("test about prefs", () => {
     it("should add a pref", async () => {
         const addtionalPref = { name: "NewPref" }
 
-        const res = await request.post("/prefs").send(addtionalPref).set("origin", null);
+        const res = await request.post("/prefs").send(addtionalPref);
         expect(res).to.have.status(201);
         expect(res.body.name).to.deep.equal("NewPref");
     })
     it("should update a pref's name", async () => {
         const changePref = { id: 1, name: "updatePref" }
 
-        const res = await request.patch("/prefs").send(changePref).set("origin", null);
+        const res = await request.patch("/prefs").send(changePref);
         expect(res.body).to.deep.equal(changePref);
     })
     it("should delete a pref", async () => {
-        const res = await request.delete("/prefs/2").set("origin", null);
+        const res = await request.delete("/prefs/2");
         expect(res).to.have.status(200);
         const result = await refRepository.findOne(2)
         expect(result).to.be.undefined;

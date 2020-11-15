@@ -11,6 +11,7 @@ export class PrefController {
     }
 
     async save(request: Request, response: Response, next: NextFunction) {
+        console.log(request.body)
         response.status(201);
         return this.prefRepository.save(request.body);
     }
@@ -24,5 +25,4 @@ export class PrefController {
         await this.prefRepository.delete(request.params.id);
         return;
     }
-
 }
