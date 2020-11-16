@@ -4,6 +4,7 @@ const setUpServer = require("../server.ts");
 const server = setUpServer();
 chai.use(chaiHttp);
 const expect = chai.expect
+import { doesNotThrow } from "assert";
 import { createConnection } from "typeorm";
 const pref_seed = require("../seeds/pref_seed");
 const _ = require("underscore");

@@ -1,5 +1,7 @@
 # Prefectures API
 
+このリポジトリはCode Chrysalisの生徒であるときに作成しました（This was created during my time as a student at Code Chrysalis）
+
 ## <span style="color:yellow">Description</span>
 ___
    
@@ -52,7 +54,7 @@ ___
 | Method | DELETE |
 | Path | /prefs/XX |  
 
-| <span style="color:#5bc0de">Response</span> | |
+| Response | |
 |:----------------:|:----------------:|
 | Stutus | 200 |
 
